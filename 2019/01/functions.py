@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-import unittest
 import math
 
 def fuel_calculator(mass):
