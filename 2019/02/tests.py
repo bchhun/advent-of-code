@@ -2,7 +2,7 @@
 
 import unittest
 
-from functions import getOpcodeResult
+from functions import getOpcodeResult, changeNounAndVerb
 
 class MyTest(unittest.TestCase):
     def test_1(self):
@@ -27,6 +27,12 @@ class MyTest(unittest.TestCase):
         self.assertEqual(
             getOpcodeResult("1,1,1,4,99,5,6,0,99"),
             "30,1,1,4,2,5,6,0,99"
+        )
+    
+    def test_changing_verb_and_noun(self):
+        self.assertEqual(
+            changeNounAndVerb("0,0,0,0", 1, 1),
+            "0,1,1,0"
         )
 
 if __name__ == '__main__':

@@ -2,10 +2,6 @@
 
 import math
 
-def divide_chunks(elements, size):
-    for x in range(0, len(elements), size):
-        yield elements[x:x + size]
-
 opcode_role_index = {
     "opcode": 0,
     "x": 1,
@@ -70,6 +66,21 @@ def getOpcodeResult(operation_codes, is_test_run = False):
 
         current_index += 1
 
+
+def changeNounAndVerb(inputs, noun, verb):
+    """ 
+    Changing the noun and the verb of our current inputs
+
+    Parameters: 
+        inputs (str): Intcode input
+        noun (int): The new noun value
+        verb (int): The new verb value
+    """
+    inputs_copy = inputs.split(",")
+    inputs_copy[1] = str(noun)
+    inputs_copy[2] = str(verb)
+
+    return ",".join(inputs_copy)
 
 if __name__ == "__main__":
     result = getOpcodeResult("1,1,1,4,99,5,6,0,99")
