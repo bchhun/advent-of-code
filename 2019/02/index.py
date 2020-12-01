@@ -14,20 +14,20 @@ def part_one():
 
 def part_two():
     expected_output = 19690720
-    # TODO: make a real reverse noun and verb calculator based on the expected output
-    # these values were found by hand...
-    noun = 65
-    verb = 77
-    output = getOpcodeResult(
-        changeNounAndVerb(part_1_input, noun, verb)
-    )
 
-    print(
-        "expected output:", expected_output, 
-        "noun:", noun,
-        "verb:", verb,
-        "output:", output.split(",")[0]
-    )
+    for noun in range(0, 100):
+        for verb in range(0, 100):
+            output = getOpcodeResult(
+                changeNounAndVerb(part_1_input, noun, verb)
+            ).split(',')[0]
+
+            if int(output) == expected_output:
+                print(
+                    "expected output:", expected_output, 
+                    "noun:", noun,
+                    "verb:", verb,
+                    "output:", output
+                )
 
 if __name__ == "__main__":
     part_one()
