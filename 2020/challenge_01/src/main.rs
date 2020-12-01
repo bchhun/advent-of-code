@@ -12,10 +12,9 @@ fn lines_from_file(filename: impl AsRef<Path>) -> Vec<String> {
         .collect()
 }
 
-fn main() {
+fn part_1() {
     let lines = lines_from_file("src/input.txt");
-    let mut expenses = Vec::new();
-    expenses = lines
+    let expenses: Vec<i32> = lines
         .iter()
         .map(
             |l| l.parse::<i32>().unwrap()
@@ -35,4 +34,8 @@ fn main() {
     }
 
     println!("expense lines: {} x {} = {}", target_expense, target_diff, target_expense * target_diff);
+}
+
+fn main() {
+    part_1();
 }
